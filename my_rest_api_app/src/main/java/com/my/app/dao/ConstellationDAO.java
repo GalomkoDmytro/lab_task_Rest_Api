@@ -2,8 +2,7 @@ package com.my.app.dao;
 
 import com.my.app.model.Constellation;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ConstellationDAO {
 
@@ -40,5 +39,10 @@ public class ConstellationDAO {
         CONSTELLATION_MAP.remove(name);
     }
 
-
+    public static List<Constellation> getAllConstellation() {
+        Collection<Constellation> c = CONSTELLATION_MAP.values();
+        List<Constellation> list = new ArrayList<Constellation>();
+        list.addAll(c);
+        return list;
+    }
 }
