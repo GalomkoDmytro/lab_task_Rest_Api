@@ -6,12 +6,14 @@ public class Star {
 
     String name;
     String constellation;
+    long number;
 
     public Star(){};
 
-    public Star(String name, String constellation) {
+    public Star(String name, String constellation, long number) {
         this.name = name;
         this.constellation = constellation;
+        this.number = number;
     }
 
     public String getName() {
@@ -30,18 +32,28 @@ public class Star {
         this.constellation = constellation;
     }
 
+    public long getNumber() {
+        return number;
+    }
+
+    public void setNumber(long number) {
+        this.number = number;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Star star = (Star) o;
         return Objects.equals(name, star.name) &&
-                Objects.equals(constellation, star.constellation);
+                Objects.equals(constellation, star.constellation)
+                &&
+                Objects.equals(number, star.number);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, constellation);
+        return Objects.hash(name, constellation, number);
     }
 
     @Override
@@ -49,6 +61,7 @@ public class Star {
         return "Star{" +
                 "name='" + name + '\'' +
                 ", constellation='" + constellation + '\'' +
+                ", number=" + number +
                 '}';
     }
 }
