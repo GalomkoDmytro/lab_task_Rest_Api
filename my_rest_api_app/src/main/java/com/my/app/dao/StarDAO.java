@@ -32,8 +32,8 @@ public class StarDAO {
         return star;
     }
 
-    public static void deleteStar(Star star) {
-        STAR_MAP.remove(star);
+    public static void deleteStar(String number) {
+        STAR_MAP.remove(number);
     }
 
     public static List<Star> getAllStar() {
